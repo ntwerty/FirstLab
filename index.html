@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Арканоид</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <link rel = "stylesheet" type = "text/css" href ="style.css">
+</head>
+<body>
+    <header>
+        <h1>АРКАНОИД</h1>
+        <p>Классическая игра с платформой и шариком</p>
+    </header>
+    
+    <div class="game-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div class="game-ui">
+            <div class="score">Очки: <span id="scoreValue">0</span></div>
+            <div class="level">Уровень: <span id="levelValue">1</span></div>
+            <div class="time">Время: <span id="timeValue">60</span></div>
+        </div>
+        
+        <div class="bonus-indicator" id="bonusIndicator">
+            <div class="bonus-icon" id="bonusIcon"></div>
+            <div class="bonus-text" id="bonusText"></div>
+        </div>
+        
+    </div>
+    
+    <div class="controls">
+        <button id="pauseButton">Пауза</button>
+        <div class="difficulty-selector">
+            <button class="difficulty-btn" data-difficulty="easy">Легкий</button>
+            <button class="difficulty-btn active" data-difficulty="medium">Средний</button>
+            <button class="difficulty-btn" data-difficulty="hard">Сложный</button>
+        </div>
+        <button id="soundToggle">Звук: Вкл</button>
+    </div>
+    
+    <div class="instructions">
+        <h3>Как играть</h3>
+        <div class="instructions-content">
+            <div class="instruction-item">
+                <h4>Управление</h4>
+                <p>Используйте мышь или клавиши ← → для перемещения платформы</p>
+                <p>Нажмите ПРОБЕЛ для запуска шарика</p>
+                <p>Нажмите P для паузы</p>
+            </div>
+            <div class="instruction-item">
+                <h4>Бонусы</h4>
+                <div class="bonus-item">
+                    <div class="bonus-example" style="background-color: #4CAF50;"></div>
+                    <span>Удлинение платформы</span>
+                </div>
+                <div class="bonus-item">
+                    <div class="bonus-example" style="background-color: #FF9800;"></div>
+                    <span>Дополнительные шарики</span>
+                </div>
+                <div class="bonus-item">
+                    <div class="bonus-example" style="background-color: #F44336;"></div>
+                    <span>Ускорение шарика</span>
+                </div>
+                <div class="bonus-item">
+                    <div class="bonus-example" style="background-color: #9C27B0;"></div>
+                    <span>Взрывная волна</span>
+                </div>
+            </div>
+            <div class="instruction-item">
+                <h4>Секреты</h4>
+                <p>• Наберите 10000 очков для получения секретного бонуса</p>
+                <p>• На уровне 3 нажмите S, P, A, M для активации пасхалки</p>
+                <p>• Удерживайте SHIFT для замедления шарика</p>
+            </div>
+        </div>
+    </div>
+
+    <script src = "script.js">
+    </script>
+</body>
+</html>
